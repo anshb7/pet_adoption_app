@@ -4,6 +4,7 @@ import '../blocs/favorites_cubit.dart';
 import '../blocs/pet_list_bloc.dart';
 import '../models/pet.dart';
 import '../utils/responsive.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -41,12 +42,15 @@ class FavoritesPage extends StatelessWidget {
               children: [
                 Icon(Icons.favorite, color: theme.appBarTheme.foregroundColor, size: responsiveValue(context, 28, 36)),
                 SizedBox(width: responsiveValue(context, 8, 16)),
-                Text(
+                AutoSizeText(
                   'Favorites',
                   style: theme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: responsiveValue(context, 18, 24),
               ),
+                  minFontSize: 10,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
@@ -68,9 +72,21 @@ class FavoritesPage extends StatelessWidget {
                           children: [
                             Icon(Icons.favorite_border, size: responsiveValue(context, 80, 120), color: theme.colorScheme.primary.withOpacity(0.2)),
                             SizedBox(height: responsiveValue(context, 24, 40)),
-                            Text('No pets have been favorited yet.', style: theme.textTheme.titleMedium?.copyWith(fontSize: responsiveValue(context, 20, 28))),
+                            AutoSizeText(
+                              'No pets have been favorited yet.',
+                              style: theme.textTheme.titleMedium?.copyWith(fontSize: responsiveValue(context, 20, 28)),
+                              minFontSize: 10,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                             SizedBox(height: responsiveValue(context, 8, 16)),
-                            Text('Tap the heart on a pet to add it to your favorites!', style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor, fontSize: responsiveValue(context, 14, 18))),
+                            AutoSizeText(
+                              'Tap the heart on a pet to add it to your favorites!',
+                              style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor, fontSize: responsiveValue(context, 14, 18)),
+                              minFontSize: 10,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ],
                         ),
                       );
@@ -102,11 +118,20 @@ class FavoritesPage extends StatelessWidget {
                                 backgroundImage: NetworkImage(pet.imageUrl),
                                 backgroundColor: theme.colorScheme.secondary.withOpacity(0.1),
                               ),
-                              title: Text(
+                              title: AutoSizeText(
                                 pet.name,
                                 style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: responsiveValue(context, 20, 28)),
+                                minFontSize: 10,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                               ),
-                              subtitle: Text('Age: ${pet.age} years\nPrice: ₹${pet.price.toStringAsFixed(0)}', style: theme.textTheme.bodyMedium?.copyWith(fontSize: responsiveValue(context, 14, 18))),
+                              subtitle: AutoSizeText(
+                                'Age: ${pet.age} years\nPrice: ₹${pet.price.toStringAsFixed(0)}',
+                                style: theme.textTheme.bodyMedium?.copyWith(fontSize: responsiveValue(context, 14, 18)),
+                                minFontSize: 10,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                               trailing: IconButton(
                                 icon: Icon(Icons.favorite, color: theme.colorScheme.error, size: responsiveValue(context, 28, 36)),
                                 onPressed: () => context.read<FavoritesCubit>().toggleFavorite(pet.id),

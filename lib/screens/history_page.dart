@@ -69,9 +69,15 @@ class HistoryPage extends StatelessWidget {
                           children: [
                             Icon(Icons.history, size: responsiveValue(context, 80, 120), color: theme.colorScheme.primary.withOpacity(0.2)),
                             SizedBox(height: responsiveValue(context, 24, 40)),
-                            Text('No pets have been adopted yet.', style: theme.textTheme.titleMedium?.copyWith(fontSize: responsiveValue(context, 20, 28))),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('No pets have been adopted yet.', style: theme.textTheme.titleMedium?.copyWith(fontSize: responsiveValue(context, 20, 28))),
+                            ),
                             SizedBox(height: responsiveValue(context, 8, 16)),
-                            Text('Adopt a pet and your history will appear here!', style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor, fontSize: responsiveValue(context, 14, 18))),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('Adopt a pet and your history will appear here!', style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor, fontSize: responsiveValue(context, 14, 18))),
+                            ),
                           ],
                         ),
                       );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/responsive.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class TopBarWidget extends StatelessWidget {
   const TopBarWidget({super.key});
@@ -13,7 +14,7 @@ class TopBarWidget extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(width: responsiveValue(context, 4, 12)),
-          Text("Pet Adoption App",
+          AutoSizeText("Pet Adoption App", minFontSize: 10, maxLines: 1, overflow: TextOverflow.ellipsis,
               style: theme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: responsiveValue(context, 18, 24),

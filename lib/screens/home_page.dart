@@ -16,6 +16,7 @@ import '../widgets/top_bar_widget.dart';
 import '../widgets/home_grid_widget.dart';
 import '../widgets/pet_card.dart';
 import '../utils/responsive.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 
 class HomePage extends StatelessWidget {

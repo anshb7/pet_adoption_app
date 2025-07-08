@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/pet.dart';
 import '../utils/responsive.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+// Removed cached_network_image import
 
 class PetCard extends StatelessWidget {
   final Pet pet;
@@ -78,27 +80,29 @@ class PetCard extends StatelessWidget {
                   ),
                   SizedBox(height: spacing),
                   Flexible(
-                    child: Text(
+                    child: AutoSizeText(
                       pet.name,
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                         fontSize: nameFontSize,
                       ),
                       textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
+                      minFontSize: 10,
                       maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Flexible(
-                    child: Text(
+                    child: AutoSizeText(
                       '(${pet.breed ?? 'Pet'})',
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: theme.hintColor,
                         fontSize: breedFontSize,
                       ),
                       textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
+                      minFontSize: 10,
                       maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Row(
@@ -110,15 +114,17 @@ class PetCard extends StatelessWidget {
                           color: theme.colorScheme.surface,
                           borderRadius: BorderRadius.circular(24),
                         ),
-                        child: Text(
+                        child: AutoSizeText(
                           'Age: ${pet.age} yrs.',
                           style: theme.textTheme.labelMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: theme.colorScheme.primary,
                             fontSize: ageFontSize,
                           ),
-                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
+                          minFontSize: 10,
                           maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       IconButton(

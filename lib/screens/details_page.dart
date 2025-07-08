@@ -4,6 +4,7 @@ import 'package:confetti/confetti.dart';
 import '../models/pet.dart';
 import '../blocs/adoption_cubit.dart';
 import '../widgets/imageviewer.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class DetailsPage extends StatefulWidget {
   final Pet pet;
@@ -162,7 +163,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                   textStyle: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: buttonFontSize),
                                 ),
                                 onPressed: isAdopted ? null : () => _handleAdoption(widget.pet.id),
-                                child: Text(isAdopted ? 'Already Adopted' : 'Adopt ${widget.pet.name}'),
+                                child: AutoSizeText(isAdopted ? 'Already Adopted' : 'Adopt ${widget.pet.name}'),
                               ),
                             ),
                           ),
@@ -201,20 +202,22 @@ class _DetailsPageState extends State<DetailsPage> {
         Row(
           children: [
             Flexible(
-              child: Text(
+              child: AutoSizeText(
                 widget.pet.name,
                 style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-                overflow: TextOverflow.ellipsis,
                 maxLines: 1,
+                minFontSize: 10,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             SizedBox(width: 8),
             Flexible(
-              child: Text(
+              child: AutoSizeText(
                 '(${widget.pet.breed ?? 'Dog'})',
                 style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
-                overflow: TextOverflow.ellipsis,
                 maxLines: 1,
+                minFontSize: 10,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -228,12 +231,15 @@ class _DetailsPageState extends State<DetailsPage> {
                 color: theme.colorScheme.secondary.withOpacity(0.15),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Text(
+              child: AutoSizeText(
                 'Female',
                 style: theme.textTheme.labelMedium?.copyWith(
                   color: theme.colorScheme.secondary,
                   fontWeight: FontWeight.bold,
                 ),
+                maxLines: 1,
+                minFontSize: 10,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             SizedBox(width: 8),
@@ -243,12 +249,15 @@ class _DetailsPageState extends State<DetailsPage> {
                 color: theme.colorScheme.primary.withOpacity(0.08),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Text(
+              child: AutoSizeText(
                 '${widget.pet.age} yrs.',
                 style: theme.textTheme.labelMedium?.copyWith(
                   color: theme.colorScheme.primary,
                   fontWeight: FontWeight.bold,
                 ),
+                maxLines: 1,
+                minFontSize: 10,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -259,11 +268,12 @@ class _DetailsPageState extends State<DetailsPage> {
             Icon(Icons.location_on, color: theme.colorScheme.error, size: 28),
             SizedBox(width: 4),
             Flexible(
-              child: Text(
+              child: AutoSizeText(
                 'Dummy Location',
                 style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
-                overflow: TextOverflow.ellipsis,
                 maxLines: 1,
+                minFontSize: 10,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
