@@ -1,16 +1,8 @@
 # pet_adoption_app
 
-A new Flutter project.
+Hi,
+This is my submission for the task of POSHA for the role of flutter developer intern.
+The apk is under the name pet_adoption_app.apk and is present with the source code.
+Looking forward to hear from you gys soon.
+Link:https://petadoption-38bb3.web.app
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
